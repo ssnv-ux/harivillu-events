@@ -1,0 +1,181 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+ * Harivillu Events — Premium Telugu Wedding Brand
+ * Palette: Ivory White, Royal Maroon, Elegant Gold, Soft Beige, Deep Green
+ */
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+
+  --font-serif: var(--font-display);
+  --font-sans: var(--font-body);
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-gold: var(--gold);
+  --color-gold-foreground: var(--gold-foreground);
+  --color-maroon: var(--maroon);
+  --color-maroon-foreground: var(--maroon-foreground);
+  --color-beige: var(--beige);
+  --color-green: var(--green);
+  --color-green-foreground: var(--green-foreground);
+  --color-whatsapp: var(--whatsapp);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --shadow-elegant: 0 20px 60px -20px color-mix(in oklab, var(--maroon) 30%, transparent);
+  --shadow-gold: 0 10px 40px -10px color-mix(in oklab, var(--gold) 40%, transparent);
+}
+
+:root {
+  --radius: 0.25rem;
+
+  --font-display: "Cormorant Garamond", "Playfair Display", Georgia, serif;
+  --font-body: "Inter", system-ui, -apple-system, sans-serif;
+
+  /* Ivory White #FFF8F0 */
+  --background: oklch(0.985 0.012 80);
+  --foreground: oklch(0.22 0.05 25);
+
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.22 0.05 25);
+
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.22 0.05 25);
+
+  /* Royal Maroon #7A1F2A */
+  --maroon: oklch(0.36 0.13 18);
+  --maroon-foreground: oklch(0.985 0.012 80);
+  --primary: oklch(0.36 0.13 18);
+  --primary-foreground: oklch(0.985 0.012 80);
+
+  /* Elegant Gold #D4AF37 */
+  --gold: oklch(0.76 0.13 85);
+  --gold-foreground: oklch(0.22 0.05 25);
+
+  /* Soft Beige #F5E6D3 */
+  --beige: oklch(0.93 0.025 75);
+  --secondary: oklch(0.93 0.025 75);
+  --secondary-foreground: oklch(0.36 0.13 18);
+
+  /* Deep Green #355E3B */
+  --green: oklch(0.42 0.08 145);
+  --green-foreground: oklch(0.985 0.012 80);
+
+  --muted: oklch(0.95 0.018 75);
+  --muted-foreground: oklch(0.45 0.04 30);
+
+  --accent: oklch(0.76 0.13 85);
+  --accent-foreground: oklch(0.22 0.05 25);
+
+  --whatsapp: oklch(0.65 0.17 145);
+
+  --destructive: oklch(0.55 0.22 25);
+  --destructive-foreground: oklch(0.985 0.012 80);
+
+  --border: oklch(0.88 0.03 75);
+  --input: oklch(0.88 0.03 75);
+  --ring: oklch(0.76 0.13 85);
+}
+
+.dark {
+  --background: oklch(0.18 0.03 25);
+  --foreground: oklch(0.97 0.015 80);
+  --card: oklch(0.22 0.04 25);
+  --card-foreground: oklch(0.97 0.015 80);
+  --popover: oklch(0.22 0.04 25);
+  --popover-foreground: oklch(0.97 0.015 80);
+  --primary: oklch(0.76 0.13 85);
+  --primary-foreground: oklch(0.22 0.05 25);
+  --maroon: oklch(0.45 0.14 18);
+  --secondary: oklch(0.28 0.05 25);
+  --secondary-foreground: oklch(0.97 0.015 80);
+  --muted: oklch(0.28 0.05 25);
+  --muted-foreground: oklch(0.72 0.03 70);
+  --accent: oklch(0.76 0.13 85);
+  --accent-foreground: oklch(0.22 0.05 25);
+  --border: oklch(1 0 0 / 12%);
+  --input: oklch(1 0 0 / 18%);
+  --ring: oklch(0.76 0.13 85);
+}
+
+@layer base {
+  * { border-color: var(--color-border); }
+  html { scroll-behavior: smooth; }
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3, h4, h5 {
+    font-family: var(--font-display);
+    letter-spacing: -0.01em;
+  }
+}
+
+@layer utilities {
+  .font-serif { font-family: var(--font-display); }
+  .font-sans { font-family: var(--font-body); }
+
+  .text-gradient-gold {
+    background: linear-gradient(135deg, #c89b2a, #f0d77a, #c89b2a);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .bg-gradient-maroon {
+    background: linear-gradient(135deg, oklch(0.32 0.13 18), oklch(0.42 0.14 22));
+  }
+
+  .border-gold-soft {
+    border-color: color-mix(in oklab, var(--gold) 50%, transparent);
+  }
+
+  .divider-ornament::before,
+  .divider-ornament::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  }
+  .divider-ornament {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    color: var(--gold);
+  }
+
+  .shadow-elegant { box-shadow: var(--shadow-elegant); }
+  .shadow-gold { box-shadow: var(--shadow-gold); }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
